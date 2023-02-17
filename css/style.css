@@ -1,0 +1,64 @@
+.card {
+    width: 40%;
+    height: 80%;
+    background-color: rgba(255, 235, 205, 0.718);
+}
+
+.background {
+    background-image: url("../images/blob-scatter-haikei.svg");
+    background-size: cover;
+
+    height: 100vh;
+}
+
+.btn-danger {
+    width: 20%;
+}
+
+.q-number {
+    width: 50%;
+    background-color: rgba(120, 33, 33, 0.785);
+    position: relative;
+}
+
+.q-number::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(120, 33, 33, 0.785);
+    width: 150%;
+    height: 3px;
+    bottom: -20px;
+    left: 0;
+}
+
+.submit-quiz {
+    display: none;
+}
+
+@media screen and (max-width:1070px) {
+    .card {
+        width: 90%;
+        height: 90%;
+    }
+
+    .submit {
+        width: 30%;
+    }
+
+    .start {
+        width: 30%;
+    }
+
+    .q-number {
+        width: 75%;
+    }
+    .q-number::after {
+        content: "";
+        position: absolute;
+        background-color: rgba(120, 33, 33, 0.785);
+        width: 133%;
+        height: 3px;
+        bottom: -20px;
+        left: 0;
+    }
+}
