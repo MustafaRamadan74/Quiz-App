@@ -7,6 +7,7 @@ let data;
 let quistoins;
 let QNumber = 0;
 let score = 0;
+let secondFunction;
 
 
 $(".start").click(function () {
@@ -16,13 +17,15 @@ $(".start").click(function () {
   noOfQuistions = noOfQuistions.val();
   getQuiz(noOfQuistions, category, difficulty);
 
-  $(".start-quiz").fadeOut(800, function () {
-    $(".submit-quiz").fadeIn(800);
+  $(".start-quiz").fadeOut(500, function () {
+    $(".submit-quiz").fadeIn(500);
   });
 
-  setTimeout(() => {
-    getAnswers()
-  }, 3000);
+  secondFunction;
+
+  // setTimeout(() => {
+  //   getAnswers();
+  // }, 2000);
 
 });
 
@@ -31,6 +34,7 @@ async function getQuiz(noOfQuistions, category, difficulty) {
   data = await fetch(`https://opentdb.com/api.php?amount=${noOfQuistions}&category=${category}&difficulty=${difficulty}&type=multiple`)
   data = await data.json();
   quistoins = data.results;
+  secondFunction = await getAnswers();
 };
 
 function getAnswers() {
